@@ -25,11 +25,14 @@
           v-model="title"
           placeholder="Title"
         ></b-form-input>
-        <b-form-input
+        <b-form-textarea
           class="my-1"
           v-model="description"
           placeholder="Description"
-        ></b-form-input>
+          rows="3"
+          max-rows="6"
+        ></b-form-textarea>
+
         <b-form-input
           class="my-1"
           v-model="price"
@@ -41,16 +44,20 @@
           v-model="phone"
           placeholder="Phone"
         ></b-form-input>
-        <b-form-input
+        <b-form-textarea
           class="my-1"
           v-model="pickupLocation"
           placeholder="Pick up location"
-        ></b-form-input>
-        <b-form-input
+          rows="3"
+          max-rows="6"
+        ></b-form-textarea>
+        <b-form-textarea
           class="my-1"
           v-model="deliverLocation"
           placeholder="Deliver location"
-        ></b-form-input>
+          rows="3"
+          max-rows="6"
+        ></b-form-textarea>
 
         <b-button
           @click="save"
@@ -86,19 +93,20 @@
         <div class="d-block text-center">
           <h3>บันทึกข้อมูลสำเร็จ</h3>
         </div>
-        <b-button class="mt-3" block @click="closeModal(true)"
-          >Close</b-button
-        >
+        <b-button variant="primary" class="mt-3" block @click="closeModal(true)">Close</b-button>
       </b-modal>
 
-      <b-modal id="response-modal" ref="my-modal2" hide-footer hide-header-close>
+      <b-modal
+        id="response-modal"
+        ref="my-modal2"
+        hide-footer
+        hide-header-close
+      >
         <template #modal-title>ขนส่งรายวัน</template>
         <div class="d-block text-center">
           <h3>บันทึกข้อมูลล้มเหลว</h3>
         </div>
-        <b-button class="mt-3" block @click="closeModal(false)"
-          >Close</b-button
-        >
+        <b-button variant="primary" class="mt-3" block @click="closeModal(false)">Close</b-button>
       </b-modal>
     </div>
   </div>
@@ -166,7 +174,7 @@ export default {
       if (isSuccess) {
         window.location.reload()
       }
-    }
+    },
   },
 }
 </script>
