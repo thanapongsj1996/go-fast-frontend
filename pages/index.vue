@@ -1,30 +1,23 @@
 <template>
-  <Homepage :jobs="jobs" />
+  <div class="center">Redirect to driver jobs page in 3 seconds...</div>
 </template>
 
 <script>
-import Homepage from '~/components/Homepage.vue'
 export default {
-  components: { Homepage },
-  async asyncData({ $axios }) {
-    const response = await $axios.$get(`https://polar-tundra-74605.herokuapp.com/api/v1/jobs/customer-requests`)
-    if (response.status) {
-      return {
-        jobs: response.data ? response.data : []
-      }
-    }
-    return { jobs: [] }
-  },
-  async mounted() {
-    // const response = await this.$axios.$get(`https://polar-tundra-74605.herokuapp.com/api/v1/jobs/customer-requests`)
-    // if (response.status) {
-    //   this.jobs = response.data ? response.data : []
-    // }
-  },
-  data() {
-    return {
-      jobs: []
-    }
+  mounted() {
+    setTimeout(() => {
+      window.location.href = `${process.env.HOST_NAME}/driver-jobs`
+    }, 3000)
   }
 }
 </script>
+
+<style scoped>
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>

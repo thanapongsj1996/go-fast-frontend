@@ -28,6 +28,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
+    '@nuxtjs/dotenv'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -39,6 +40,11 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
   ],
+
+  env: {
+    API_ENDPOINT: process.env.API_ENDPOINT || 'https://polar-tundra-74605.herokuapp.com/api/v1',
+    HOST_NAME:process.env.HOST_NAME || 'http://localhost:3000'
+  },
 
   bootstrapVue: {
     icons: true
