@@ -8,7 +8,7 @@
       <b-list-group flush>
         <b-list-group-item class="px-0">
           <b-icon
-            class="mx-3"
+            class="mx-2 mx-md-3"
             icon="cash-stack"
             scale="2"
             variant="info"
@@ -16,17 +16,17 @@
           ราคาเริ่มต้น {{ jobInfo.startPrice }}
         </b-list-group-item>
         <b-list-group-item class="px-0">
-          <b-icon class="mx-3" icon="clock" scale="2" variant="info"></b-icon>
-          เวลาออกเดินทาง {{ timeString(jobInfo.departureTime) }}
+          <b-icon class="mx-2 mx-md-3" icon="clock" scale="2" variant="info"></b-icon>
+          ออกเดินทาง {{ timeString(jobInfo.departureTime) }}
         </b-list-group-item>
         <b-list-group-item class="px-0">
           <b-icon
-            class="mx-3"
+            class="mx-2 mx-md-3"
             icon="clock-fill"
             scale="2"
             variant="info"
           ></b-icon>
-          เวลาถึงปลายทาง {{ timeString(jobInfo.destinationTime) }}
+          ถึงปลายทาง {{ timeString(jobInfo.destinationTime) }}
         </b-list-group-item>
       </b-list-group>
 
@@ -49,11 +49,16 @@ export default {
   },
   methods: {
     formatDate(day, d, m, y) {
-      return `วัน${day}ที่ ${d} ${months[m]} พ.ศ. ${y + 543}`
+      return `วัน${day}ที่ ${d} ${months[m]} ${(y + 543)}`
     },
     timeString(date) {
       const d = new Date(date)
-      return this.formatDate(days[d.getDay()], d.getDate(), d.getMonth(), d.getFullYear())
+      return this.formatDate(
+        days[d.getDay()],
+        d.getDate(),
+        d.getMonth(),
+        d.getFullYear()
+      )
     },
   },
 }
@@ -67,17 +72,17 @@ const days = [
   'เสาร์',
 ]
 const months = [
-  'มกราคม',
-  'กุมภาพันธ์',
-  'มีนาคม',
-  'เมษายน',
-  'พฤษภาคม',
-  'มิถุนายน',
-  'กรกฎาคม',
-  'สิงหาคม',
-  'กันยายน',
-  'ตุลาคม',
-  'พฤศจิกายน',
-  'ธันวาคม',
+  'ม.ค.',
+  'ก.พ.',
+  'มี.ค.',
+  'เม.ย.',
+  'พ.ค.',
+  'มิ.ย.',
+  'ก.ค.',
+  'ส.ค.',
+  'ก.ย.',
+  'ต.ค.',
+  'พ.ย.',
+  'ธ.ค.',
 ]
 </script>

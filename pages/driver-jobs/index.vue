@@ -22,5 +22,6 @@ export default {
       driverJobs: [],
     }
   },
+  watchQuery: true,
 }
 </script>
