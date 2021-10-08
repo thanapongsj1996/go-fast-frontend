@@ -1,17 +1,26 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="dark" variant="info">
-      <b-navbar-brand href="#">ส่งส่ง.com</b-navbar-brand>
+    <b-navbar toggleable="lg" type="dark" variant="info" class="px-md-5">
+      <b-navbar-brand to="/driver-jobs"
+        ><b-avatar variant="info" src="/logo.png" class="mr-3"></b-avatar
+        >ส่งส่ง.com</b-navbar-brand
+      >
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item to="/driver-jobs" :active="$route.name.includes('driver-jobs')">
-            งานส่งของทั้งหมด
+          <b-nav-item
+            to="/driver-jobs"
+            :active="$route.name.includes('driver-jobs')"
+          >
+            งานส่งของ
           </b-nav-item>
-          <b-nav-item to="/pre-order-jobs" :active="$route.name.includes('pre-order-jobs')">
-            งานฝากซื้อทั้งหมด
+          <b-nav-item
+            to="/pre-order-jobs"
+            :active="$route.name.includes('pre-order-jobs')"
+          >
+            งานฝากซื้อของ
           </b-nav-item>
         </b-navbar-nav>
 
@@ -33,9 +42,8 @@
 
 <script>
 export default {
-    data() {
-        return {
-        }
-    }
+  data() {
+    return {}
+  },
 }
 </script>

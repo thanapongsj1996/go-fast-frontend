@@ -1,6 +1,15 @@
 <template>
   <div>
     <b-card :title="`${jobInfo.departurePlace} - ${jobInfo.destinationPlace}`">
+      <template #header>
+        <b-avatar class="mr-3" src="/profile.jpg"></b-avatar>
+        <span class="mr-auto" style="font-size: 20px">{{
+          `${jobInfo.driver ? jobInfo.driver.firstName : ''} ${
+            jobInfo.driver ? jobInfo.driver.lastName : ''
+          }`
+        }}</span>
+      </template>
+
       <b-card-text class="mt-1" style="font-size: 18px">
         {{ jobInfo.description }}
       </b-card-text>
@@ -10,20 +19,25 @@
           <b-icon
             class="mx-2 mx-md-3"
             icon="cash-stack"
-            scale="2"
+            scale="1.5"
             variant="info"
           ></b-icon>
           ราคาเริ่มต้น {{ jobInfo.startPrice }}
         </b-list-group-item>
         <b-list-group-item class="px-0">
-          <b-icon class="mx-2 mx-md-3" icon="clock" scale="2" variant="info"></b-icon>
+          <b-icon
+            class="mx-2 mx-md-3"
+            icon="clock"
+            scale="1.5"
+            variant="info"
+          ></b-icon>
           ออกเดินทาง {{ timeString(jobInfo.departureTime) }}
         </b-list-group-item>
         <b-list-group-item class="px-0">
           <b-icon
             class="mx-2 mx-md-3"
             icon="clock-fill"
-            scale="2"
+            scale="1.5"
             variant="info"
           ></b-icon>
           ถึงปลายทาง {{ timeString(jobInfo.destinationTime) }}
@@ -31,8 +45,8 @@
       </b-list-group>
 
       <nuxt-link :to="`/driver-jobs/${jobInfo.uuid}`"
-        ><b-button variant="info" class="mt-2 mx-2 w-100" size="lg"
-          >สนใจ</b-button
+        ><b-button variant="info" class="mt-3 w-100" size="lg"
+          >รายละเอียดเพิ่มเติม</b-button
         ></nuxt-link
       >
     </b-card>
@@ -49,7 +63,7 @@ export default {
   },
   methods: {
     formatDate(day, d, m, y) {
-      return `วัน${day}ที่ ${d} ${months[m]} ${(y + 543)}`
+      return `วัน${day}ที่ ${d} ${months[m]} ${y + 543}`
     },
     timeString(date) {
       const d = new Date(date)

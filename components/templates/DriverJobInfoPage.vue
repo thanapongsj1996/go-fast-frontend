@@ -3,10 +3,19 @@
     class="my-4 my-md-5 col-12 col-sm-10 col-md-10 col-lg-8 col-xl-6 px-0"
   >
     <h2 class="mt-4 mb-3 mt-md-5 mb-md-3">รายละเอียดงาน</h2>
-    <div>
+    <div v-if="jobInfo">
       <b-card
         :title="`${jobInfo.departurePlace} - ${jobInfo.destinationPlace}`"
       >
+        <template #header>
+          <b-avatar class="mr-3" size="lg" src="/profile.jpg"></b-avatar>
+          <span class="mr-auto" style="font-size: 20px">{{
+            `${jobInfo.driver ? jobInfo.driver.firstName : ''} ${
+              jobInfo.driver ? jobInfo.driver.lastName : ''
+            }`
+          }}</span>
+        </template>
+
         <b-card-text class="mt-1" style="font-size: 18px">
           {{ jobInfo.description }}
         </b-card-text>
@@ -19,7 +28,7 @@
               scale="1"
               variant="info"
             ></b-icon>
-            ราคาเริ่มต้น {{ jobInfo.startPrice }}
+            ราคาเริ่มต้น {{ jobInfo.startPrice }} บาท
           </b-list-group-item>
           <b-list-group-item class="px-0">
             <b-icon
@@ -67,7 +76,7 @@
           <b-list-group-item class="px-0">
             <b-icon
               class="mx-2 mx-md-3"
-              icon="telephone-fill"
+              icon="person-fill"
               scale="1"
               variant="info"
             ></b-icon>
@@ -85,7 +94,7 @@
               scale="1"
               variant="info"
             ></b-icon>
-            เบอร์โทร {{ jobInfo.phone }}
+            เบอร์โทรศัพท์ {{ jobInfo.phone }}
           </b-list-group-item>
         </b-list-group>
       </b-card>
@@ -105,6 +114,7 @@
             v-model="name"
             :state="state"
             trim
+            placeholder="ตัวอย่าง: สมหมาย"
           ></b-form-input>
         </b-form-group>
 
@@ -120,12 +130,13 @@
             v-model="name"
             :state="state"
             trim
+            placeholder="ตัวอย่าง: ใจดี"
           ></b-form-input>
         </b-form-group>
 
         <b-form-group
           id="fieldset-1"
-          label="เบอร์โทรศัพท์"
+          label="เบอร์โทรศัพท์ (ผู้ส่งของ)"
           label-for="input-1"
           valid-feedback="Thank you!"
           :state="state"
@@ -135,6 +146,23 @@
             v-model="name"
             :state="state"
             trim
+            placeholder="ตัวอย่าง: 0999999999"
+          ></b-form-input>
+        </b-form-group>
+
+        <b-form-group
+          id="fieldset-1"
+          label="เบอร์โทรศัพท์ (ผู้รับของ)"
+          label-for="input-1"
+          valid-feedback="Thank you!"
+          :state="state"
+        >
+          <b-form-input
+            id="input-1"
+            v-model="name"
+            :state="state"
+            trim
+            placeholder="ตัวอย่าง: 0999999999"
           ></b-form-input>
         </b-form-group>
 
@@ -150,6 +178,7 @@
             v-model="name"
             :state="state"
             trim
+            placeholder="ตัวอย่าง: ต้องการฝากส่งเสื้อผ้า 1 ชุดและรองเท้า 1 คู่"
           ></b-form-input>
         </b-form-group>
 
@@ -165,6 +194,7 @@
             v-model="name"
             :state="state"
             trim
+            placeholder="ตัวอย่าง: เซเว่น-อีเลเว่น ปตท. ด่านช้าง"
           ></b-form-input>
         </b-form-group>
 
@@ -180,6 +210,7 @@
             v-model="name"
             :state="state"
             trim
+            placeholder="ตัวอย่าง: BTS พญาไท ทางออกที่ 3 เขตราชเทวี กรุงเทพฯ"
           ></b-form-input>
         </b-form-group>
 
@@ -195,10 +226,13 @@
             v-model="name"
             :state="state"
             trim
+            placeholder="ข้อมูลเพิ่มเติม (ถ้ามี)"
           ></b-form-input>
         </b-form-group>
 
-        <b-button variant="primary" class="my-3 w-100" size="lg">ยืนยันข้อมูล</b-button>
+        <b-button variant="info" class="my-3 w-100" size="lg"
+          >ยืนยันข้อมูล</b-button
+        >
       </b-card>
     </div>
   </b-container>
@@ -259,3 +293,19 @@ const months = [
   'ธ.ค.',
 ]
 </script>
+
+<style scoped>
+::placeholder {
+  opacity: 0.6; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  opacity: 0.6; /* Firefox */
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  opacity: 0.6; /* Firefox */
+}
+</style>
