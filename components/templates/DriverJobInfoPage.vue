@@ -295,10 +295,10 @@ export default {
     dateString(date) {
       const d = new Date(date)
       return this.formatDate(
-        days[d.getDay()],
-        d.getDate(),
-        d.getMonth(),
-        d.getFullYear()
+        days[d.getUTCDay()],
+        d.getUTCDate(),
+        d.getUTCMonth(),
+        d.getUTCFullYear()
       )
     },
     timeString(date) {
