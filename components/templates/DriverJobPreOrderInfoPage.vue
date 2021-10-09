@@ -28,11 +28,20 @@
           <b-list-group-item class="px-0">
             <b-icon
               class="mx-2 mx-md-3"
+              icon="shop-window"
+              scale="1"
+              variant="info"
+            ></b-icon>
+            สถานที่ซื้อสินค้า {{ jobInfo.shopPlace }}
+          </b-list-group-item>
+          <b-list-group-item class="px-0">
+            <b-icon
+              class="mx-2 mx-md-3"
               icon="geo-fill"
               scale="1"
               variant="info"
             ></b-icon>
-            {{ jobInfo.shopPlace }}
+            สถานที่ส่งสินค้า {{ jobInfo.destinationPlace }}
           </b-list-group-item>
           <b-list-group-item class="px-0">
             <b-icon
