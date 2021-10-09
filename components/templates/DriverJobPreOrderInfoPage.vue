@@ -31,7 +31,7 @@
               scale="1"
               variant="info"
             ></b-icon>
-            ค่าส่ง {{ jobInfo.price }} บาท / ชิ้น
+            ค่าหิ้ว {{ jobInfo.price }} บาท / ชิ้น
           </b-list-group-item>
           <b-list-group-item class="px-0">
             <b-icon
