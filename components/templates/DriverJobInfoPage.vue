@@ -57,7 +57,7 @@
               scale="1"
               variant="info"
             ></b-icon>
-            สถานที่ระหว่างทาง
+            จุดสำคัญที่ผ่าน
             <b-list-group flush>
               <b-list-group-item
                 v-for="p in places"
