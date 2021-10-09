@@ -171,7 +171,7 @@
           ></b-form-input>
         </b-form-group>
 
-        <b-form-group id="fieldset-1" label="สถานที่รับของ" label-for="input-1">
+        <b-form-group id="fieldset-1" label="สถานที่ให้คนขับไปรับของ" label-for="input-1">
           <b-form-input
             id="input-1"
             v-model="pickupPlace"
@@ -180,7 +180,7 @@
           ></b-form-input>
         </b-form-group>
 
-        <b-form-group id="fieldset-1" label="สถานที่ส่งของ" label-for="input-1">
+        <b-form-group id="fieldset-1" label="สถานที่ให้คนขับไปส่งของ" label-for="input-1">
           <b-form-input
             id="input-1"
             v-model="deliverPlace"
@@ -303,9 +303,9 @@ export default {
       } else if (this.items === null || this.items === '') {
         this.errMsg = 'โปรดระบุรายละเอียดของที่ฝากส่ง'
       } else if (this.pickupPlace === null || this.pickupPlace === '') {
-        this.errMsg = 'โปรดระบุสถานที่รับของ'
+        this.errMsg = 'โปรดระบุสถานที่ให้คนขับไปรับของ'
       } else if (this.deliverPlace === null || this.deliverPlace === '') {
-        this.errMsg = 'โปรดระบุสถานที่ส่งของ'
+        this.errMsg = 'โปรดระบุสถานที่ให้คนขับไปส่งของ'
       } else if (this.description === null || this.description === '') {
         this.errMsg = ''
         this.description = ''
