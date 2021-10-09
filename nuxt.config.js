@@ -32,6 +32,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/assets/css/styles.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -45,7 +46,8 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/google-fonts'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -57,6 +59,14 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
   ],
+
+  googleFonts: {
+    families: {
+      Prompt: true,
+      'Bai Jamjuree': true
+    },
+    prefetch: true
+  },
 
   env: {
     API_ENDPOINT: process.env.API_ENDPOINT || 'https://polar-tundra-74605.herokuapp.com/api/v1',

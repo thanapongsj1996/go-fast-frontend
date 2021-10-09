@@ -1,6 +1,6 @@
 <template>
   <b-container>
-    <h2 class="mt-4 mb-3 mt-md-5 mb-md-3">งานส่งของทั้งหมด</h2>
+    <h2 class="mt-4 mb-3 mt-md-5 mb-md-3 prompt-font">งานส่งของทั้งหมด</h2>
     <div class="row">
       <div
         v-for="job in driverJobs"

@@ -57,7 +57,7 @@
       </b-list-group>
 
       <nuxt-link :to="`/driver-jobs/${jobInfo.uuid}`"
-        ><b-button variant="info" class="mt-3 w-100" size="lg"
+        ><b-button variant="info" class="mt-3 w-100 prompt-font" size="lg"
           >รายละเอียดเพิ่มเติม</b-button
         ></nuxt-link
       >

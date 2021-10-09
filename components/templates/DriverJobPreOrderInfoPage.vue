@@ -2,7 +2,7 @@
   <b-container
     class="my-4 my-md-5 col-12 col-sm-10 col-md-10 col-lg-8 col-xl-6"
   >
-    <h2 class="mt-4 mb-3 mt-md-5 mb-md-3 mx-1 mx-md-0">รายละเอียดงาน</h2>
+    <h2 class="mt-4 mb-3 mt-md-5 mb-md-3 mx-1 mx-md-0 prompt-font">รายละเอียดงาน</h2>
     <div v-if="jobInfo">
       <b-card :title="`${jobInfo.description}`">
         <template #header>
@@ -89,7 +89,7 @@
         </b-list-group>
       </b-card>
     </div>
-    <h2 class="mt-4 mb-3 mt-md-5 mb-md-3">กรอกข้อมูลฝากส่งของ</h2>
+    <h2 class="mt-4 mb-3 mt-md-5 mb-md-3 prompt-font">กรอกข้อมูลฝากส่งของ</h2>
     <div>
       <b-card>
         <b-form-group id="fieldset-1" label="ชื่อจริง" label-for="input-1">
@@ -161,7 +161,7 @@
         <b-button
           @click="saveDate()"
           variant="info"
-          class="my-3 w-100"
+          class="my-3 w-100 prompt-font"
           size="lg"
           >ยืนยันข้อมูล</b-button
         >
@@ -181,7 +181,7 @@
       </div>
       <b-button
         size="lg"
-        class="mt-3"
+        class="mt-3 prompt-font"
         :variant="errMsg === '' ? 'info' : 'danger'"
         block
         @click="hideModal"
