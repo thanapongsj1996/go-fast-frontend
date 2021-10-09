@@ -2,11 +2,21 @@
   <b-container
     class="my-4 my-md-5 col-12 col-sm-10 col-md-10 col-lg-8 col-xl-6"
   >
-    <h2 class="mt-4 mb-3 mt-md-5 mb-md-3 mx-1 mx-md-0 prompt-font">รายละเอียดงาน</h2>
+    <h2 class="mt-4 mb-3 mt-md-5 mb-md-3 mx-1 mx-md-0 prompt-font">
+      รายละเอียดงาน
+    </h2>
     <div v-if="jobInfo">
       <b-card :title="`${jobInfo.description}`">
         <template #header>
-          <b-avatar class="mr-3" size="lg" src="/profile.jpg"></b-avatar>
+          <b-avatar
+            class="mr-3"
+            size="lg"
+            :src="`/${
+              jobInfo.driver && jobInfo.driver.profileImg !== ''
+                ? jobInfo.driver.profileImg
+                : 'default.png'
+            }`"
+          ></b-avatar>
           <span class="mr-auto" style="font-size: 20px">{{
             `${jobInfo.driver ? jobInfo.driver.firstName : ''} ${
               jobInfo.driver ? jobInfo.driver.lastName : ''
@@ -242,10 +252,7 @@ export default {
         this.errMsg = 'โปรดระบุนามสกุล'
       } else if (this.phone === null || this.phone === '') {
         this.errMsg = 'โปรดระบุเบอร์โทรศัพท์มือถือ'
-      } else if (
-        !this.phone.match(reg) ||
-        this.phone.length !== 10
-      ) {
+      } else if (!this.phone.match(reg) || this.phone.length !== 10) {
         this.errMsg = 'โปรดระบุเบอร์โทรศัพท์มือถือให้ถูกต้อง'
       } else if (this.items === null || this.items === '') {
         this.errMsg = 'โปรดระบุรายละเอียดของที่ฝากซื้อ'

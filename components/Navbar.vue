@@ -15,7 +15,7 @@
           >ส่งส่ง.com</b-navbar-brand
         >
 
-        <b-navbar-toggle></b-navbar-toggle>
+        <b-navbar-toggle target=""></b-navbar-toggle>
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>

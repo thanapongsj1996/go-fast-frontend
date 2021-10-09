@@ -2,7 +2,14 @@
   <div>
     <b-card :title="`${jobInfo.description}`">
       <template #header>
-        <b-avatar class="mr-3" src="/profile.jpg"></b-avatar>
+        <b-avatar
+          class="mr-3"
+          :src="`/${
+            jobInfo.driver && jobInfo.driver.profileImg !== ''
+              ? jobInfo.driver.profileImg
+              : 'default.png'
+          }`"
+        ></b-avatar>
         <span class="mr-auto" style="font-size: 20px">{{
           `${jobInfo.driver ? jobInfo.driver.firstName : ''} ${
             jobInfo.driver ? jobInfo.driver.lastName : ''
@@ -38,7 +45,8 @@
               variant="info"
             ></b-icon>
             <span class="ml-1">
-              ซื้อสินค้า {{ dateString(jobInfo.departureTime) }} <br class="d-md-none" />(
+              ซื้อสินค้า {{ dateString(jobInfo.departureTime) }}
+              <br class="d-md-none" />(
               {{ timeString(jobInfo.departureTime) }}
               )
             </span>
@@ -53,7 +61,8 @@
               variant="info"
             ></b-icon>
             <span class="ml-1">
-              ถึง {{ dateString(jobInfo.destinationTime) }} <br class="d-md-none" />(
+              ถึง {{ dateString(jobInfo.destinationTime) }}
+              <br class="d-md-none" />(
               {{ timeString(jobInfo.destinationTime) }}
               )
             </span>
