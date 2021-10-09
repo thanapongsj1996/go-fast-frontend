@@ -182,7 +182,7 @@
       <b-button
         size="lg"
         class="mt-3"
-        variant="primary"
+        :variant="errMsg === '' ? 'primary' : 'danger'"
         block
         @click="hideModal"
         >ปิด</b-button
