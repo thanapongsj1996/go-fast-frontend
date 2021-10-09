@@ -234,12 +234,19 @@ export default {
     async saveDate() {
       // validate
       this.errMsg = ''
+      const reg = /^\d+$/
+
       if (this.firstName === null || this.firstName === '') {
         this.errMsg = 'โปรดระบุชื่อจริง'
       } else if (this.lastName === null || this.lastName === '') {
         this.errMsg = 'โปรดระบุนามสกุล'
       } else if (this.phone === null || this.phone === '') {
         this.errMsg = 'โปรดระบุเบอร์โทรศัพท์มือถือ'
+      } else if (
+        !this.phone.match(reg) ||
+        this.phone.length !== 10
+      ) {
+        this.errMsg = 'โปรดระบุเบอร์โทรศัพท์มือถือให้ถูกต้อง'
       } else if (this.items === null || this.items === '') {
         this.errMsg = 'โปรดระบุรายละเอียดของที่ฝากซื้อ'
       } else if (this.deliverPlace === null || this.deliverPlace === '') {
