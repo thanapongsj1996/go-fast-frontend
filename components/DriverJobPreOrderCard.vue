@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-card :title="`${jobInfo.departurePlace} - ${jobInfo.destinationPlace}`">
+    <b-card :title="`${jobInfo.description}`">
       <template #header>
         <b-avatar class="mr-3" src="/profile.jpg"></b-avatar>
         <span class="mr-auto" style="font-size: 20px">{{
@@ -10,11 +10,16 @@
         }}</span>
       </template>
 
-      <b-card-text class="mt-1" style="font-size: 18px">
-        {{ jobInfo.description }}
-      </b-card-text>
-
       <b-list-group flush>
+        <b-list-group-item class="px-0">
+          <b-icon
+            class="mx-2 mx-md-3"
+            icon="geo-fill"
+            scale="1.5"
+            variant="info"
+          ></b-icon>
+          {{ jobInfo.shopPlace }}
+        </b-list-group-item>
         <b-list-group-item class="px-0">
           <b-icon
             class="mx-2 mx-md-3"
@@ -22,7 +27,7 @@
             scale="1.5"
             variant="info"
           ></b-icon>
-          ราคาเริ่มต้น {{ jobInfo.startPrice }} บาท
+          ค่าส่ง {{ jobInfo.price }} บาท
         </b-list-group-item>
         <b-list-group-item class="px-0">
           <b-icon
@@ -31,7 +36,8 @@
             scale="1.5"
             variant="info"
           ></b-icon>
-          ออกเดินทาง {{ dateString(jobInfo.departureTime) }} ( {{timeString(jobInfo.departureTime)}} )
+          เลือกซื้อสินค้า {{ dateString(jobInfo.departureTime) }} (
+          {{ timeString(jobInfo.departureTime) }} )
         </b-list-group-item>
         <b-list-group-item class="px-0">
           <b-icon
@@ -40,11 +46,12 @@
             scale="1.5"
             variant="info"
           ></b-icon>
-          ถึงปลายทาง {{ dateString(jobInfo.destinationTime) }} ( {{timeString(jobInfo.destinationTime)}} )
+          ถึงปลายทาง {{ dateString(jobInfo.destinationTime) }} (
+          {{ timeString(jobInfo.destinationTime) }} )
         </b-list-group-item>
       </b-list-group>
 
-      <nuxt-link :to="`/driver-jobs/${jobInfo.uuid}`"
+      <nuxt-link :to="`/pre-order-jobs/${jobInfo.uuid}`"
         ><b-button variant="info" class="mt-3 w-100" size="lg"
           >รายละเอียดเพิ่มเติม</b-button
         ></nuxt-link
@@ -80,11 +87,8 @@ export default {
     },
     timeString(date) {
       const d = new Date(date)
-      return this.formatTime(
-        d.getUTCHours(),
-        d.getUTCMinutes()
-      )
-    }
+      return this.formatTime(d.getUTCHours(), d.getUTCMinutes())
+    },
   },
 }
 const days = [
