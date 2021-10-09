@@ -33,7 +33,7 @@
           <div class="d-flex">
             <b-icon
               class="mx-2 mx-md-3 mt-2 mt-md-1"
-              icon="clock-fill"
+              icon="clock"
               scale="1.5"
               variant="info"
             ></b-icon>
