@@ -31,7 +31,7 @@
             scale="1.5"
             variant="info"
           ></b-icon>
-          ออกเดินทาง {{ timeString(jobInfo.departureTime) }}
+          วันออกเดินทาง {{ dateString(jobInfo.departureTime) }} ( {{timeString(jobInfo.departureTime)}} )
         </b-list-group-item>
         <b-list-group-item class="px-0">
           <b-icon
@@ -40,7 +40,7 @@
             scale="1.5"
             variant="info"
           ></b-icon>
-          ถึงปลายทาง {{ timeString(jobInfo.destinationTime) }}
+          วันถึงปลายทาง {{ dateString(jobInfo.destinationTime) }} ( {{timeString(jobInfo.destinationTime)}} )
         </b-list-group-item>
       </b-list-group>
 
@@ -65,7 +65,11 @@ export default {
     formatDate(day, d, m, y) {
       return `วัน${day}ที่ ${d} ${months[m]} ${y + 543}`
     },
-    timeString(date) {
+    formatTime(h, m) {
+      const minute = `${m}`.length === 1 ? `0${m}` : m
+      return `${h}:${minute} น.`
+    },
+    dateString(date) {
       const d = new Date(date)
       return this.formatDate(
         days[d.getDay()],
@@ -74,6 +78,13 @@ export default {
         d.getFullYear()
       )
     },
+    timeString(date) {
+      const d = new Date(date)
+      return this.formatTime(
+        d.getUTCHours(),
+        d.getUTCMinutes()
+      )
+    }
   },
 }
 const days = [
