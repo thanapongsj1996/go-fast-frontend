@@ -225,8 +225,17 @@
           variant="info"
           class="my-3 w-100 prompt-font"
           size="lg"
-          >ยืนยันข้อมูล</b-button
-        >
+          :disabled="loading"
+          ><span v-if="!loading">ยืนยันข้อมูล</span>
+          <div v-else-if="loading" class="center">
+            <b-icon
+              icon="three-dots"
+              variant="light"
+              animation="cylon"
+              font-scale="1.5"
+            ></b-icon>
+          </div>
+        </b-button>
       </b-card>
     </div>
 
@@ -272,6 +281,7 @@ export default {
       deliverPlace: null,
       description: null,
       errMsg: '',
+      loading: false,
     }
   },
   methods: {
@@ -296,6 +306,8 @@ export default {
       return this.formatTime(d.getUTCHours(), d.getUTCMinutes())
     },
     async saveDate() {
+      this.loading = true
+
       // validate
       this.errMsg = ''
       const reg = /^\d+$/
@@ -331,6 +343,7 @@ export default {
 
       if (this.errMsg !== '') {
         this.showModal()
+        this.loading = false
         return
       }
 
@@ -364,6 +377,7 @@ export default {
         this.errMsg = 'เกิดปัญหาขณะบันทึกข้อมูล กรุณาลองใหม่ภายหลัง'
         this.showModal()
       }
+      this.loading = false
     },
     clearState() {
       this.firstName = null
