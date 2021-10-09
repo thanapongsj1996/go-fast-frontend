@@ -14,7 +14,7 @@
         <b-card>
           <b-card-text class="text-center pt-5 pb-3">
             <b-avatar variant="none" size="120px" src="/line.png" class="mr-3"></b-avatar>
-            <h4 class="text-center mt-4 mb-0 prompt-font" style="text-decoration: none;">เพจ : ส่งส่ง</h4>
+            <h4 class="text-center mt-4 mb-0 prompt-font" style="text-decoration: none;">LINE@ : ส่งส่ง</h4>
           </b-card-text>
         </b-card>
       </a>

@@ -89,7 +89,7 @@
         </b-list-group>
       </b-card>
     </div>
-    <h2 class="mt-4 mb-3 mt-md-5 mb-md-3 prompt-font">กรอกข้อมูลฝากส่งของ</h2>
+    <h2 class="mt-4 mb-3 mt-md-5 mb-md-3 prompt-font">กรอกข้อมูลฝากซื้อของ</h2>
     <div>
       <b-card>
         <b-form-group id="fieldset-1" label="ชื่อจริง" label-for="input-1">

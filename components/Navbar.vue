@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar-toggle :target="width <= 991 ? 'nav-collapse':''">
+    <b-navbar-toggle :target="width <= 991 ? 'nav-collapse':''" :disabled="width > 991">
       
       <b-navbar
         toggleable="lg"
