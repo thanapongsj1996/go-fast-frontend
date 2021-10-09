@@ -122,7 +122,7 @@
             id="input-1"
             v-model="items"
             trim
-            placeholder="ตัวอย่าง: ต้องการฝากส่งเสื้อผ้า 1 ชุดและรองเท้า 1 คู่"
+            placeholder="ตัวอย่าง: ต้องการฝากซื้อมิสเตอร์โดนัท 1 กล่อง"
           ></b-form-input>
         </b-form-group>
 
