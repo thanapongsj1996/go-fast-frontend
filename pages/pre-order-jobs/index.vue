@@ -21,7 +21,6 @@ export default {
     const response = await this.$axios.$get(
       `${process.env.API_ENDPOINT}/driver-jobs/pre-order`
     )
-    console.log('response : ', response)
     if (response.status) {
       this.driverJobs = response.data ? response.data : []
     }
