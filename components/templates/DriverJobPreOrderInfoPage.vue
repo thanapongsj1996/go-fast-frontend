@@ -34,24 +34,33 @@
             ค่าหิ้ว {{ jobInfo.price }} บาท / ชิ้น
           </b-list-group-item>
           <b-list-group-item class="px-0">
-            <b-icon
-              class="mx-2 mx-md-3"
-              icon="clock"
-              scale="1"
-              variant="info"
-            ></b-icon>
-            ซื้อสินค้า {{ dateString(jobInfo.departureTime) }} (
-            {{ timeString(jobInfo.departureTime) }} )
+            <div class="d-flex">
+              <b-icon
+                class="mx-2 mx-md-3 mt-2 mt-md-1"
+                icon="clock"
+                scale="1"
+                variant="info"
+              ></b-icon>
+              <span class="ml-1">
+                ซื้อสินค้า {{ dateString(jobInfo.departureTime) }} (
+                {{ timeString(jobInfo.departureTime) }} )
+              </span>
+            </div>
           </b-list-group-item>
           <b-list-group-item class="px-0">
-            <b-icon
-              class="mx-2 mx-md-3"
-              icon="clock-fill"
-              scale="1"
-              variant="info"
-            ></b-icon>
-            ถึง {{ dateString(jobInfo.destinationTime) }} (
-            {{ timeString(jobInfo.destinationTime) }} )
+            <div class="d-flex">
+              <b-icon
+                class="mx-2 mx-md-3 mt-2 mt-md-1"
+                icon="clock-fill"
+                scale="1"
+                variant="info"
+              ></b-icon>
+              <span class="ml-1">
+                ถึง {{ dateString(jobInfo.destinationTime) }}
+                <br class="d-md-none" />(
+                {{ timeString(jobInfo.destinationTime) }} )
+              </span>
+            </div>
           </b-list-group-item>
           <b-list-group-item class="px-0">
             <b-icon
@@ -165,7 +174,9 @@
     >
       <div class="d-block text-center">
         <h4>{{ errMsg === '' ? 'ขอบคุณที่ใช้บริการ' : errMsg }}</h4>
-        <p v-if="errMsg === ''">หากคำสั่งของคุณได้รับการยืนยัน จะมีการติดต่อกลับไป</p>
+        <p v-if="errMsg === ''">
+          หากคำสั่งของคุณได้รับการยืนยัน จะมีการติดต่อกลับไป
+        </p>
       </div>
       <b-button
         size="lg"

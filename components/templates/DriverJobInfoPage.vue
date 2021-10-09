@@ -31,24 +31,34 @@
             ราคาเริ่มต้น {{ jobInfo.startPrice }} บาท
           </b-list-group-item>
           <b-list-group-item class="px-0">
-            <b-icon
-              class="mx-2 mx-md-3"
-              icon="clock"
-              scale="1"
-              variant="info"
-            ></b-icon>
-            เดินทาง {{ dateString(jobInfo.departureTime) }} (
-            {{ timeString(jobInfo.departureTime) }} )
+            <div class="d-flex">
+              <b-icon
+                class="mx-2 mx-md-3 mt-2 mt-md-1"
+                icon="clock"
+                scale="1"
+                variant="info"
+              ></b-icon>
+              <span class="ml-1">
+                เดินทาง {{ dateString(jobInfo.departureTime) }}
+                <br class="d-md-none" />(
+                {{ timeString(jobInfo.departureTime) }} )
+              </span>
+            </div>
           </b-list-group-item>
           <b-list-group-item class="px-0">
-            <b-icon
-              class="mx-2 mx-md-3"
-              icon="clock-fill"
-              scale="1"
-              variant="info"
-            ></b-icon>
-            ถึง {{ dateString(jobInfo.destinationTime) }} (
-            {{ timeString(jobInfo.destinationTime) }} )
+            <div class="d-flex">
+              <b-icon
+                class="mx-2 mx-md-3 mt-2 mt-md-1"
+                icon="clock-fill"
+                scale="1"
+                variant="info"
+              ></b-icon>
+              <span class="ml-1">
+                ถึง {{ dateString(jobInfo.destinationTime) }}
+                <br class="d-md-none" />(
+                {{ timeString(jobInfo.destinationTime) }} )
+              </span>
+            </div>
           </b-list-group-item>
           <b-list-group-item class="px-0">
             <b-icon
@@ -209,9 +219,16 @@
     >
       <div class="d-block text-center">
         <h4>{{ errMsg === '' ? 'ขอบคุณที่ใช้บริการ' : errMsg }}</h4>
-        <p v-if="errMsg === ''">หากคำสั่งของคุณได้รับการยืนยัน จะมีการติดต่อกลับไป</p>
+        <p v-if="errMsg === ''">
+          หากคำสั่งของคุณได้รับการยืนยัน จะมีการติดต่อกลับไป
+        </p>
       </div>
-      <b-button size="lg" class="mt-3" variant="primary" block @click="hideModal"
+      <b-button
+        size="lg"
+        class="mt-3"
+        variant="primary"
+        block
+        @click="hideModal"
         >ปิด</b-button
       >
     </b-modal>
@@ -263,7 +280,7 @@ export default {
     async saveDate() {
       // validate
       this.errMsg = ''
-      const reg = /^\d+$/;
+      const reg = /^\d+$/
 
       if (this.firstName === null || this.firstName === '') {
         this.errMsg = 'โปรดระบุชื่อจริง'
@@ -271,11 +288,17 @@ export default {
         this.errMsg = 'โปรดระบุนามสกุล'
       } else if (this.senderPhone === null || this.senderPhone === '') {
         this.errMsg = 'โปรดระบุเบอร์โทรศัพท์มือถือ (ผู้ส่งของ)'
-      } else if (!this.senderPhone.match(reg) || this.senderPhone.length !== 10) {
+      } else if (
+        !this.senderPhone.match(reg) ||
+        this.senderPhone.length !== 10
+      ) {
         this.errMsg = 'โปรดระบุเบอร์โทรศัพท์มือถือ (ผู้ส่งของ) ให้ถูกต้อง'
       } else if (this.receiverPhone === null || this.receiverPhone === '') {
         this.errMsg = 'โปรดระบุเบอร์โทรศัพท์มือถือ (ผู้รับของ)'
-      } else if (!this.receiverPhone.match(reg) || this.receiverPhone.length !== 10) {
+      } else if (
+        !this.receiverPhone.match(reg) ||
+        this.receiverPhone.length !== 10
+      ) {
         this.errMsg = 'โปรดระบุเบอร์โทรศัพท์มือถือ (ผู้รับของ) ให้ถูกต้อง'
       } else if (this.items === null || this.items === '') {
         this.errMsg = 'โปรดระบุรายละเอียดของที่ฝากส่ง'
