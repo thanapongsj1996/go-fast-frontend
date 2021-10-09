@@ -134,7 +134,7 @@
 
         <b-form-group
           id="fieldset-1"
-          label="เบอร์โทรศัพท์มือถือ (ผู้ส่งของ)"
+          label="เบอร์โทรศัพท์มือถือ (ผู้ฝากส่งของ)"
           label-for="input-1"
         >
           <b-form-input
@@ -287,12 +287,12 @@ export default {
       } else if (this.lastName === null || this.lastName === '') {
         this.errMsg = 'โปรดระบุนามสกุล'
       } else if (this.senderPhone === null || this.senderPhone === '') {
-        this.errMsg = 'โปรดระบุเบอร์โทรศัพท์มือถือ (ผู้ส่งของ)'
+        this.errMsg = 'โปรดระบุเบอร์โทรศัพท์มือถือ (ผู้ฝากส่งของ)'
       } else if (
         !this.senderPhone.match(reg) ||
         this.senderPhone.length !== 10
       ) {
-        this.errMsg = 'โปรดระบุเบอร์โทรศัพท์มือถือ (ผู้ส่งของ) ให้ถูกต้อง'
+        this.errMsg = 'โปรดระบุเบอร์โทรศัพท์มือถือ (ผู้ฝากส่งของ) ให้ถูกต้อง'
       } else if (this.receiverPhone === null || this.receiverPhone === '') {
         this.errMsg = 'โปรดระบุเบอร์โทรศัพท์มือถือ (ผู้รับของ)'
       } else if (
