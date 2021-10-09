@@ -70,7 +70,7 @@ export default {
   },
   methods: {
     formatDate(day, d, m, y) {
-      return `วัน${day}ที่ ${d} ${months[m]} ${y + 543}`
+      return `${day}ที่ ${d} ${months[m]} ${y + 543}`
     },
     formatTime(h, m) {
       const minute = `${m}`.length === 1 ? `0${m}` : m

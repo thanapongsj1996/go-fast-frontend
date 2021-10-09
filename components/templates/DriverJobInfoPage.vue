@@ -1,8 +1,8 @@
 <template>
   <b-container
-    class="my-4 my-md-5 col-12 col-sm-10 col-md-10 col-lg-8 col-xl-6 px-0"
+    class="my-4 my-md-5 col-12 col-sm-10 col-md-10 col-lg-8 col-xl-6"
   >
-    <h2 class="mt-4 mb-3 mt-md-5 mb-md-3">รายละเอียดงาน</h2>
+    <h2 class="mt-4 mb-3 mt-md-5 mb-md-3 mx-1 mx-md-0">รายละเอียดงาน</h2>
     <div v-if="jobInfo">
       <b-card
         :title="`${jobInfo.departurePlace} - ${jobInfo.destinationPlace}`"
@@ -240,7 +240,7 @@ export default {
   },
   methods: {
     formatDate(day, d, m, y) {
-      return `วัน${day}ที่ ${d} ${months[m]} ${y + 543}`
+      return `${day}ที่ ${d} ${months[m]} ${y + 543}`
     },
     formatTime(h, m) {
       const minute = `${m}`.length === 1 ? `0${m}` : m
