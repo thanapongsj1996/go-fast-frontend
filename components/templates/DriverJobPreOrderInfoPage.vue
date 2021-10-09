@@ -42,7 +42,8 @@
                 variant="info"
               ></b-icon>
               <span class="ml-1">
-                ซื้อสินค้า {{ dateString(jobInfo.departureTime) }} (
+                ซื้อสินค้า {{ dateString(jobInfo.departureTime) }}
+                <br class="d-md-none" />(
                 {{ timeString(jobInfo.departureTime) }} )
               </span>
             </div>
