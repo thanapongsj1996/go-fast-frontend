@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="dark" variant="info" class="px-md-5">
-      <b-navbar-brand to="/driver-jobs"
+      <b-navbar-brand
         ><b-avatar variant="info" src="/logo.png" class="mr-3"></b-avatar
         >ส่งส่ง.com</b-navbar-brand
       >
@@ -21,6 +21,12 @@
             :active="$route.name.includes('pre-order-jobs')"
           >
             งานฝากซื้อของ
+          </b-nav-item>
+          <b-nav-item
+            href="https://www.facebook.com/ส่งส่ง-113410371111462/"
+            target="blank"
+          >
+            ติดต่อเรา
           </b-nav-item>
         </b-navbar-nav>
 

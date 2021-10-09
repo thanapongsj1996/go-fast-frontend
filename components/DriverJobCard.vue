@@ -31,7 +31,7 @@
             scale="1.5"
             variant="info"
           ></b-icon>
-          ออกเดินทาง {{ dateString(jobInfo.departureTime) }} ( {{timeString(jobInfo.departureTime)}} )
+          เดินทาง {{ dateString(jobInfo.departureTime) }} ( {{timeString(jobInfo.departureTime)}} )
         </b-list-group-item>
         <b-list-group-item class="px-0">
           <b-icon
@@ -40,7 +40,7 @@
             scale="1.5"
             variant="info"
           ></b-icon>
-          ถึงปลายทาง {{ dateString(jobInfo.destinationTime) }} ( {{timeString(jobInfo.destinationTime)}} )
+          ถึง {{ dateString(jobInfo.destinationTime) }} ( {{timeString(jobInfo.destinationTime)}} )
         </b-list-group-item>
       </b-list-group>
 

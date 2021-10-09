@@ -37,7 +37,7 @@
               scale="1"
               variant="info"
             ></b-icon>
-            ออกเดินทาง {{ dateString(jobInfo.departureTime) }} (
+            เดินทาง {{ dateString(jobInfo.departureTime) }} (
             {{ timeString(jobInfo.departureTime) }} )
           </b-list-group-item>
           <b-list-group-item class="px-0">
@@ -47,7 +47,7 @@
               scale="1"
               variant="info"
             ></b-icon>
-            ถึงปลายทาง {{ dateString(jobInfo.destinationTime) }} (
+            ถึง {{ dateString(jobInfo.destinationTime) }} (
             {{ timeString(jobInfo.destinationTime) }} )
           </b-list-group-item>
           <b-list-group-item class="px-0">
@@ -96,7 +96,7 @@
               scale="1"
               variant="info"
             ></b-icon>
-            เบอร์โทรศัพท์ {{ jobInfo.phone }}
+            เบอร์โทรศัพท์มือถือ {{ jobInfo.phone }}
           </b-list-group-item>
         </b-list-group>
       </b-card>
@@ -124,7 +124,7 @@
 
         <b-form-group
           id="fieldset-1"
-          label="เบอร์โทรศัพท์ (ผู้ส่งของ)"
+          label="เบอร์โทรศัพท์มือถือ (ผู้ส่งของ)"
           label-for="input-1"
         >
           <b-form-input
@@ -137,7 +137,7 @@
 
         <b-form-group
           id="fieldset-1"
-          label="เบอร์โทรศัพท์ (ผู้รับของ)"
+          label="เบอร์โทรศัพท์มือถือ (ผู้รับของ)"
           label-for="input-1"
         >
           <b-form-input
@@ -209,6 +209,7 @@
     >
       <div class="d-block text-center">
         <h4>{{ errMsg === '' ? 'ขอบคุณที่ใช้บริการ' : errMsg }}</h4>
+        <p v-if="errMsg === ''">หากคำสั่งของคุณได้รับการยืนยัน จะมีการติดต่อกลับไป</p>
       </div>
       <b-button size="lg" class="mt-3" variant="primary" block @click="hideModal"
         >ปิด</b-button
@@ -262,14 +263,20 @@ export default {
     async saveDate() {
       // validate
       this.errMsg = ''
+      const reg = /^\d+$/;
+
       if (this.firstName === null || this.firstName === '') {
         this.errMsg = 'โปรดระบุชื่อจริง'
       } else if (this.lastName === null || this.lastName === '') {
         this.errMsg = 'โปรดระบุนามสกุล'
       } else if (this.senderPhone === null || this.senderPhone === '') {
-        this.errMsg = 'โปรดระบุเบอร์โทรศัพท์ (ผู้ส่งของ)'
+        this.errMsg = 'โปรดระบุเบอร์โทรศัพท์มือถือ (ผู้ส่งของ)'
+      } else if (!this.senderPhone.match(reg) || this.senderPhone.length !== 10) {
+        this.errMsg = 'โปรดระบุเบอร์โทรศัพท์มือถือ (ผู้ส่งของ) ให้ถูกต้อง'
       } else if (this.receiverPhone === null || this.receiverPhone === '') {
-        this.errMsg = 'โปรดระบุเบอร์โทรศัพท์ (ผู้รับของ)'
+        this.errMsg = 'โปรดระบุเบอร์โทรศัพท์มือถือ (ผู้รับของ)'
+      } else if (!this.receiverPhone.match(reg) || this.receiverPhone.length !== 10) {
+        this.errMsg = 'โปรดระบุเบอร์โทรศัพท์มือถือ (ผู้รับของ) ให้ถูกต้อง'
       } else if (this.items === null || this.items === '') {
         this.errMsg = 'โปรดระบุรายละเอียดของที่ฝากส่ง'
       } else if (this.pickupPlace === null || this.pickupPlace === '') {

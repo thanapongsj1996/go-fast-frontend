@@ -27,7 +27,7 @@
             scale="1.5"
             variant="info"
           ></b-icon>
-          ค่าส่ง {{ jobInfo.price }} บาท
+          ค่าส่ง {{ jobInfo.price }} บาท / ชิ้น
         </b-list-group-item>
         <b-list-group-item class="px-0">
           <b-icon
@@ -36,7 +36,7 @@
             scale="1.5"
             variant="info"
           ></b-icon>
-          เลือกซื้อสินค้า {{ dateString(jobInfo.departureTime) }} (
+          ซื้อสินค้า {{ dateString(jobInfo.departureTime) }} (
           {{ timeString(jobInfo.departureTime) }} )
         </b-list-group-item>
         <b-list-group-item class="px-0">
@@ -46,7 +46,7 @@
             scale="1.5"
             variant="info"
           ></b-icon>
-          ถึงปลายทาง {{ dateString(jobInfo.destinationTime) }} (
+          ถึง {{ dateString(jobInfo.destinationTime) }} (
           {{ timeString(jobInfo.destinationTime) }} )
         </b-list-group-item>
       </b-list-group>

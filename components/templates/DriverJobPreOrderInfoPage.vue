@@ -31,7 +31,7 @@
               scale="1"
               variant="info"
             ></b-icon>
-            ค่าส่ง {{ jobInfo.price }} บาท
+            ค่าส่ง {{ jobInfo.price }} บาท / ชิ้น
           </b-list-group-item>
           <b-list-group-item class="px-0">
             <b-icon
@@ -40,7 +40,7 @@
               scale="1"
               variant="info"
             ></b-icon>
-            เลือกซื้อสินค้า {{ dateString(jobInfo.departureTime) }} (
+            ซื้อสินค้า {{ dateString(jobInfo.departureTime) }} (
             {{ timeString(jobInfo.departureTime) }} )
           </b-list-group-item>
           <b-list-group-item class="px-0">
@@ -50,7 +50,7 @@
               scale="1"
               variant="info"
             ></b-icon>
-            ถึงปลายทาง {{ dateString(jobInfo.destinationTime) }} (
+            ถึง {{ dateString(jobInfo.destinationTime) }} (
             {{ timeString(jobInfo.destinationTime) }} )
           </b-list-group-item>
           <b-list-group-item class="px-0">
@@ -74,7 +74,7 @@
               scale="1"
               variant="info"
             ></b-icon>
-            เบอร์โทรศัพท์ {{ jobInfo.phone }}
+            เบอร์โทรศัพท์มือถือ {{ jobInfo.phone }}
           </b-list-group-item>
         </b-list-group>
       </b-card>
@@ -102,7 +102,7 @@
 
         <b-form-group
           id="fieldset-1"
-          label="เบอร์โทรศัพท์"
+          label="เบอร์โทรศัพท์มือถือ"
           label-for="input-1"
         >
           <b-form-input
@@ -165,6 +165,7 @@
     >
       <div class="d-block text-center">
         <h4>{{ errMsg === '' ? 'ขอบคุณที่ใช้บริการ' : errMsg }}</h4>
+        <p v-if="errMsg === ''">หากคำสั่งของคุณได้รับการยืนยัน จะมีการติดต่อกลับไป</p>
       </div>
       <b-button
         size="lg"
@@ -226,7 +227,7 @@ export default {
       } else if (this.lastName === null || this.lastName === '') {
         this.errMsg = 'โปรดระบุนามสกุล'
       } else if (this.phone === null || this.phone === '') {
-        this.errMsg = 'โปรดระบุเบอร์โทรศัพท์'
+        this.errMsg = 'โปรดระบุเบอร์โทรศัพท์มือถือ'
       } else if (this.items === null || this.items === '') {
         this.errMsg = 'โปรดระบุรายละเอียดของที่ฝากซื้อ'
       } else if (this.deliverPlace === null || this.deliverPlace === '') {
