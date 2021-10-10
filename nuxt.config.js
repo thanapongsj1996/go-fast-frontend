@@ -5,7 +5,12 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'ส่งส่ง.com', name: 'ส่งส่ง.com', content: 'ฝากซื้อ ฝากส่ง ทันใจ' },
+      { hid: 'description', name: 'description', content: 'ฝากซื้อ ฝากส่ง ทันใจ' },
+      { hid: 'og:title', name: 'og:title', content: 'ส่งส่ง.com' },
+      { hid: 'og:description', name: 'og:description', content: 'ฝากซื้อ ฝากส่ง ทันใจ' },
+      { hid: 'og:url', name: 'og:url', content: 'www.ส่งส่ง.com' },
+      { hid: 'og:image', name: 'og:image', content: '/logo.png' },
+      { hid: 'og:type', name: 'og:type', content: 'article' },
       { name: 'format-detection', content: 'telephone=no' },
       { name: "msapplication-TileColor", content: "#ffffff" },
       { name: "msapplication-TileImage", content: "/ms-icon-144x144.png" },
@@ -58,6 +63,7 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    'vue-social-sharing/nuxt',
   ],
 
   googleFonts: {
