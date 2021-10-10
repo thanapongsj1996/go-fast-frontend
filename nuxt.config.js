@@ -8,6 +8,7 @@ export default {
       { hid: 'description', name: 'description', content: 'ฝากซื้อ ฝากส่ง ทันใจ' },
       { hid: 'og:title', name: 'og:title', content: 'ส่งส่ง.com' },
       { hid: 'og:description', name: 'og:description', content: 'ฝากซื้อ ฝากส่ง ทันใจ' },
+      { hid: 'og:site_name', name: 'og:site_name', content: 'ส่งส่ง.com' },
       { hid: 'og:url', name: 'og:url', content: 'www.ส่งส่ง.com' },
       { hid: 'og:image', name: 'og:image', content: '/logo.png' },
       { hid: 'og:type', name: 'og:type', content: 'article' },
