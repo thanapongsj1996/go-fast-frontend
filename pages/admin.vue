@@ -19,12 +19,12 @@
       </div>
     </b-container>
     <div v-if="deliveryJobResponses.length > 0" class="mt-5 mx-4">
-        <h4>Delivery Job Responses</h4>
+      <h4>Delivery Job Responses</h4>
       <b-table striped hover :items="deliveryJobResponses"></b-table>
     </div>
 
     <div v-if="preorderJobResponses.length > 0" class="mt-5 mx-4">
-        <h4>Pre-order Job Responses</h4>
+      <h4>Pre-order Job Responses</h4>
       <b-table striped hover :items="preorderJobResponses"></b-table>
     </div>
   </div>
@@ -67,7 +67,7 @@ export default {
             return p
           })
         }
-        
+
         const preorderRes = await this.getAllPreOrderResponse(this.password)
         if (preorderRes.status && preorderRes.data) {
           this.preorderJobResponses = preorderRes.data.map((d) => {
