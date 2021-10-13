@@ -22,7 +22,7 @@
         size="lg"
       ></b-form-input>
 
-      <b-button variant="info" class="w-100" size="lg"
+      <b-button variant="info" @click="login" class="w-100" size="lg"
         >เข้าสู่ระบบ</b-button
       >
     </div>
@@ -39,6 +39,7 @@ export default {
     },
     methods: {
         login() {
+            alert('test login')
             // if (!this.phone || this.phone === '') {
                 
             // }
