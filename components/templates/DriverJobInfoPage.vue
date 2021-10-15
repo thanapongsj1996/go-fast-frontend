@@ -2,6 +2,35 @@
   <b-container
     class="my-4 my-md-5 col-12 col-sm-10 col-md-10 col-lg-8 col-xl-6"
   >
+    <!-- <h2 class="mt-4 mb-2 mt-md-5 mb-md-2 prompt-font">รูปภาพสินค้า</h2>
+    <div fluid class="text-center">
+      <div class="row">
+        <div class="col-6 col-sm-4 col-md-3 mt-2">
+          <b-img
+            thumbnail
+            fluid
+            src="https://picsum.photos/250/250/?image=54"
+            alt="Image 1"
+          ></b-img>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 mt-2">
+          <b-img
+            thumbnail
+            fluid
+            src="https://picsum.photos/250/250/?image=58"
+            alt="Image 2"
+          ></b-img>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 mt-2">
+          <b-img
+            thumbnail
+            fluid
+            src="https://picsum.photos/250/250/?image=59"
+            alt="Image 3"
+          ></b-img>
+        </div>
+      </div>
+    </div> -->
     <h2 class="mt-4 mb-3 mt-md-5 mb-md-3 mx-1 mx-md-0 prompt-font">
       รายละเอียดงาน
     </h2>
@@ -109,7 +138,7 @@
               }`
             }}
           </b-list-group-item>
-          <b-list-group-item class="px-0">
+          <!-- <b-list-group-item class="px-0">
             <b-icon
               class="mx-2 mx-md-3"
               icon="telephone-fill"
@@ -117,10 +146,11 @@
               variant="info"
             ></b-icon>
             เบอร์โทรศัพท์มือถือ {{ jobInfo.phone }}
-          </b-list-group-item>
+          </b-list-group-item> -->
         </b-list-group>
       </b-card>
     </div>
+
     <h2 class="mt-4 mb-3 mt-md-5 mb-md-3 prompt-font">กรอกข้อมูลฝากส่งของ</h2>
     <div>
       <b-card>
