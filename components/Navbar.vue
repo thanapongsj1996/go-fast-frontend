@@ -10,7 +10,7 @@
         fixed="top"
         target="nav-collapse"
       >
-        <b-navbar-brand
+        <b-navbar-brand to="/"
           ><b-avatar variant="info" src="/logo.png" class="mr-3"></b-avatar
           >ส่งส่ง.com</b-navbar-brand
         >
