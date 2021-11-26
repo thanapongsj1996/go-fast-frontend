@@ -20,6 +20,12 @@
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
             <b-nav-item
+              to="/drivers"
+              :active="$route.name.includes('drivers')"
+            >
+              พาร์ทเนอร์ของเรา
+            </b-nav-item>
+            <!-- <b-nav-item
               to="/driver-jobs"
               :active="$route.name.includes('driver-jobs')"
             >
@@ -30,7 +36,7 @@
               :active="$route.name.includes('pre-order-jobs')"
             >
               งานฝากซื้อของ
-            </b-nav-item>
+            </b-nav-item> -->
             <b-nav-item to="/contact" :active="$route.name.includes('contact')">
               ติดต่อเรา
             </b-nav-item>

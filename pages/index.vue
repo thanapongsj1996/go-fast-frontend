@@ -10,7 +10,7 @@ export default {
     }
   },
   mounted() {
-    window.location.href = `${process.env.HOST_NAME}/driver-jobs`
+    window.location.href = `${process.env.HOST_NAME}/drivers`
   },
 }
 </script>
