@@ -17,6 +17,7 @@
           :total-rows="rows"
           :per-page="parPage"
           align="center"
+          size="lg"
         ></b-pagination>
       </div>
     </div>
